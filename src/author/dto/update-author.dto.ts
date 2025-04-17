@@ -1,4 +1,9 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateAuthorDto } from './create-author.dto';
+import { ApiProperty } from '@nestjs/swagger';
 
-export class UpdateAuthorDto extends PartialType(CreateAuthorDto) {}
+export class UpdateAuthorDto {
+  @ApiProperty({ description: 'Whether author was saved/updated' })
+  saved: boolean;
+
+  @ApiProperty({ description: 'Status message' })
+  message: string;
+}
